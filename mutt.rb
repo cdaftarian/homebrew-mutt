@@ -39,11 +39,17 @@ class Mutt < Formula
   option "with-pgp-verbose-mime-patch", "Apply PGP verbose mime patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
   option "with-sidebar-patch", "Apply sidebar (folder list) patch" unless build.head?
+  option "with-smime-patch", "Apply sidebar (folder list) patch" unless build.head?
 
   depends_on 'openssl'
   depends_on 'tokyo-cabinet'
   depends_on 's-lang' => :optional
   depends_on 'gpgme' => :optional
+
+  patch do
+    url "https://raw.github.com/cdaftarian/homebrew-stuff/master/smime.patch"
+    sha1 "9d42b3703837be063297841c615cc219055732c5"
+  end if build.with? "smime-patch"
 
   patch do
     url "https://raw.github.com/nedos/mutt-sidebar-patch/master/mutt-sidebar.patch"
