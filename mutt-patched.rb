@@ -1,6 +1,6 @@
 require 'formula'
 
-class Mutt < Formula
+class MuttPatched < Formula
   homepage 'http://www.mutt.org/'
   url 'ftp://ftp.mutt.org/mutt/mutt-1.5.23.tar.gz'
   mirror 'http://fossies.org/linux/misc/mutt-1.5.23.tar.gz'
